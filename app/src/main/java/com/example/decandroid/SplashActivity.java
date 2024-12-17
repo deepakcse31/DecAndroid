@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences=getSharedPreferences("onx",MODE_PRIVATE);
                 String loginstatus = sharedPreferences.getString("loginstatus", "");
                 if (loginstatus.equals("true")) {
-                    Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, TextWatcherActivity.class);
                     startActivity(intent);
                 }
                 else {
