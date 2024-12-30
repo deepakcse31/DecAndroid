@@ -15,6 +15,15 @@
         android:theme="@style/Theme.DecAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LottieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HorizontalRecyclerview"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerViewActivity"
             android:exported="false" />
         <activity
