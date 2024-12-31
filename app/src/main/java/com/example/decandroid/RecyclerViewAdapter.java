@@ -10,15 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private List<MyList> myLists;
+  //  private List<MyList> myLists;
     private Context context;
+    private List<Repository> listData;
 
 
-    public RecyclerViewAdapter(List<MyList> myLists, Context context){
-        this.myLists=myLists;
+    public RecyclerViewAdapter(List<Repository> listData, Context context){
+        this.listData=listData;
         this.context=context;
     }
     @NonNull
@@ -33,15 +36,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-    holder.tvname.setText(myLists.get(position).name);
-    holder.tvdesc.setText(myLists.get(position).des);
+    holder.tvname.setText(listData.get(position).getName());
+    holder.tvdesc.setText(listData.get(position).getFull_name());
 
+        Glide.with(context)
+                .load(listData.get(position).getOwner().getAvatar_url())
+                .into(holder.ivimg);
 
     }
 
     @Override
     public int getItemCount() {
-        return myLists.size();
+        return listData.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences=getSharedPreferences("onx",MODE_PRIVATE);
                 String loginstatus = sharedPreferences.getString("loginstatus", "");
                 if (loginstatus.equals("true")) {
-                    Intent intent = new Intent(SplashActivity.this, SignUpActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, RecyclerViewActivity.class);
                     startActivity(intent);
                 }
                 else {

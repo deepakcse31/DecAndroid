@@ -18,6 +18,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:hint="Enter Mobile No"
         android:id="@+id/edtmobileno"
+        android:inputType="phone"
         />
 
     <Button
